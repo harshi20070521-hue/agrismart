@@ -1,0 +1,169 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f7f6;
+color:#333;
+}
+
+/* TOP HEADER */
+.top-header{
+background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:white;
+text-align:center;
+padding:70px 0;
+}
+.top-header h1{
+font-size:32px;
+}
+.brand{
+font-size:36px;
+font-weight:800;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+.top-header p{
+font-size:16px;
+opacity:0.9;
+}
+
+/* NAVBAR */
+.navbar{
+background:#145a1f;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:12px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.navbar a:hover{
+text-decoration:underline;
+}
+
+/* HERO CONTENT */
+.hero{
+text-align:center;
+padding:60px 20px;
+background:white;
+}
+
+.hero h2{
+font-size:36px;
+color:#2e7d32;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+margin-bottom:25px;
+font-size:18px;
+}
+
+.hero button{
+padding:12px 30px;
+background:#2e7d32;
+border:none;
+border-radius:30px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#1b5e20;
+}
+
+/* CARD SECTION */
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:50px 10%;
+}
+
+.card{
+background:white;
+width:300px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:60px;
+margin-bottom:15px;
+}
+
+.card h3{
+color:#2e7d32;
+margin-bottom:10px;
+}
+
+/* CONTENT PAGE SECTION */
+.section{
+padding:60px 10%;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+footer{
+background:#145a1f;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+/* ===== GOOGLE TRANSLATE FIX ===== */
+
+.goog-te-banner-frame.skiptranslate {
+display: none !important;
+}
+
+body {
+top: 0px !important;
+}
+
+#google_translate_element select {
+padding:6px;
+border-radius:6px;
+border:none;
+font-weight:500;
+cursor:pointer;
+}
+
+.goog-te-gadget {
+color:white !important;
+}

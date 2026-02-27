@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chatbot - AGRISMART</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.chat-container{
+max-width:900px;
+margin:40px auto;
+background:white;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+height:600px;
+}
+
+.chat-box{
+flex:1;
+padding:20px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+}
+
+.message{
+margin-bottom:15px;
+padding:10px 15px;
+border-radius:15px;
+max-width:70%;
+word-wrap:break-word;
+}
+
+.user{
+background:#2e7d32;
+color:white;
+align-self:flex-end;
+}
+
+.bot{
+background:#f1f1f1;
+align-self:flex-start;
+}
+
+.chat-input{
+display:flex;
+padding:10px;
+border-top:1px solid #ddd;
+gap:10px;
+}
+
+.chat-input input[type="text"]{
+flex:1;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.chat-input button{
+padding:10px 15px;
+background:#2e7d32;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+.chat-input button:hover{
+background:#1b5e20;
+}
+
+.preview-img{
+max-width:200px;
+margin-top:10px;
+border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="top-header">
+<h1 class="brand">🌾 AGRISMART</h1>
+<p>AI Farming Assistant</p>
+</div>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="disease.html">Disease Detection</a>
+<a href="soil.html">Soil & Crops</a>
+<a href="weather.html">Weather</a>
+<a href="irrigation.html">Irrigation</a>
+<a href="fertilizer.html">Fertilizer</a>
+<a href="farming.html">Farming</a>
+<a href="subsidy.html">Subsidy</a>
+<a href="market.html">Market</a>
+<a href="offseason.html">Off-Season</a>
+<a href="chatbot.html">Chatbot</a>
+</div>
+
+<div class="chat-container">
+
+<div class="chat-box" id="chatBox">
+<div class="message bot">
+Hello 👋 I am AGRISMART AI.<br>
+You can send text or upload crop image for disease diagnosis.
+</div>
+</div>
+
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Type your farming question...">
+<input type="file" id="imageInput" accept="image/*">
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 AGRISMART
+</footer>
+
+<script>
+function sendMessage(){
+
+let textInput = document.getElementById("userInput");
+let imageInput = document.getElementById("imageInput");
+let chatBox = document.getElementById("chatBox");
+
+// TEXT MESSAGE
+if(textInput.value.trim() !== ""){
+let userMsg = document.createElement("div");
+userMsg.className = "message user";
+userMsg.innerText = textInput.value;
+chatBox.appendChild(userMsg);
+
+let botMsg = document.createElement("div");
+botMsg.className = "message bot";
+
+let text = textInput.value.toLowerCase();
+
+if(text.includes("irrigation")){
+botMsg.innerHTML = "💧 Water early morning.<br>Recommended: Drip irrigation.";
+}
+else if(text.includes("fertilizer")){
+botMsg.innerHTML = "🌱 Use Urea 45kg per acre (Do not exceed).";
+}
+else{
+botMsg.innerHTML = "Please ask about irrigation, fertilizer, soil, or upload crop image.";
+}
+
+chatBox.appendChild(botMsg);
+textInput.value = "";
+}
+
+// IMAGE MESSAGE
+if(imageInput.files.length > 0){
+
+let file = imageInput.files[0];
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+let userImageMsg = document.createElement("div");
+userImageMsg.className = "message user";
+userImageMsg.innerHTML = "<img src='"+e.target.result+"' class='preview-img'>";
+chatBox.appendChild(userImageMsg);
+
+// Simulated disease response
+let botMsg = document.createElement("div");
+botMsg.className = "message bot";
+botMsg.innerHTML = `
+🌿 Disease Detected: Leaf Blight <br>
+Cause: High humidity fungal infection <br>
+Medicine: Mancozeb 75% WP <br>
+Quantity: 400g per acre <br>
+How to Apply: Spray evenly in morning <br>
+Prevention: Proper drainage & crop rotation
+`;
+chatBox.appendChild(botMsg);
+
+chatBox.scrollTop = chatBox.scrollHeight;
+};
+
+reader.readAsDataURL(file);
+imageInput.value = "";
+}
+
+chatBox.scrollTop = chatBox.scrollHeight;
+}
+</script>
+<script>
+function googleTranslateElementInit() {
+new google.translate.TranslateElement(
+{pageLanguage: 'en'},
+'google_translate_element'
+);
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

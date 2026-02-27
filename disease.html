@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Disease Detection - AGRISMAT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-header">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0 40px;">
+        
+        <div>
+            <h1 class="brand">🌾 AGRISMART</h1>
+            <p>Crop Disease Detection System</p>
+        </div>
+
+        <!-- Language Selector -->
+        <div id="google_translate_element"></div>
+
+    </div>
+</div>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="disease.html">Disease Detection</a>
+<a href="soil.html">Soil & Crops</a>
+<a href="weather.html">Weather</a>
+<a href="irrigation.html">Irrigation</a>
+<a href="fertilizer.html">Fertilizer</a>
+<a href="farming.html">Farming</a>
+<a href="subsidy.html">Subsidy</a>
+<a href="market.html">Market</a>
+<a href="offseason.html">Off-Season</a>
+<a href="chatbot.html">Chatbot</a>
+</div>
+
+<div class="section">
+<h2 style="color:#2e7d32;margin-bottom:20px;">Upload Crop Image</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Select Image</h3>
+<input type="file">
+<button>Analyze</button>
+</div>
+
+<div class="box">
+<h3>Disease Details</h3>
+<p><b>Disease:</b> Leaf Blight</p>
+<p><b>Cause:</b> High humidity fungal infection</p>
+<p><b>Medicine:</b> Mancozeb 75% WP</p>
+<p><b>Quantity:</b> 400g per acre (Safe limit)</p>
+<p><b>How to Apply:</b> Spray evenly morning time</p>
+<p><b>Prevention:</b> Proper drainage & crop rotation</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+© 2026 AGRISMAT
+</footer>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

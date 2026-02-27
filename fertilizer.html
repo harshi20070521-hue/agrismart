@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fertilizer & Pesticide - AGRISMART</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-header">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0 40px;">
+        
+        <div>
+            <h1 class="brand">🌾 AGRISMART</h1>
+            <p>Crop Disease Detection System</p>
+        </div>
+
+        <!-- Language Selector -->
+        <div id="google_translate_element"></div>
+
+    </div>
+</div>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="disease.html">Disease Detection</a>
+<a href="soil.html">Soil & Crops</a>
+<a href="weather.html">Weather</a>
+<a href="irrigation.html">Irrigation</a>
+<a href="fertilizer.html">Fertilizer</a>
+<a href="farming.html">Farming</a>
+<a href="subsidy.html">Subsidy</a>
+<a href="market.html">Market</a>
+<a href="offseason.html">Off-Season</a>
+<a href="chatbot.html">Chatbot</a>
+</div>
+
+<div class="hero">
+<div class="section">
+<h2 style="color:#2e7d32;margin-bottom:20px;">Fertilizer Recommendation</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Enter Crop Details</h3>
+
+<label>Crop Type:</label>
+<input type="text" id="cropName">
+
+<label>Growth Stage:</label>
+<select id="stage">
+<option>Initial</option>
+<option>Vegetative</option>
+<option>Flowering</option>
+</select>
+
+<button onclick="fertilizerAdvice()">Get Recommendation</button>
+</div>
+
+<div class="box">
+<h3>Fertilizer Output</h3>
+<div id="fertilizerResult">Output will appear here...</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function fertilizerAdvice(){
+let crop=document.getElementById("cropName").value;
+let stage=document.getElementById("stage").value;
+let result="";
+
+if(stage==="Initial"){
+result="Apply DAP 50kg per acre.";
+}
+else if(stage==="Vegetative"){
+result="Apply Urea 45kg per acre (Do not exceed).";
+}
+else{
+result="Apply NPK 20:20:20 25kg per acre.";
+}
+
+document.getElementById("fertilizerResult").innerHTML=
+"Crop: "+crop+"<br>"+result;
+}
+</script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

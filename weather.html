@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather Guidance - AGRISMART</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-header">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0 40px;">
+        
+        <div>
+            <h1 class="brand">🌾 AGRISMART</h1>
+            <p>Smart Support for Farmers</p>
+        </div>
+
+        <!-- Language Selector -->
+        <div id="google_translate_element"></div>
+
+    </div>
+</div>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="disease.html">Disease Detection</a>
+<a href="soil.html">Soil & Crops</a>
+<a href="weather.html">Weather</a>
+<a href="irrigation.html">Irrigation</a>
+<a href="fertilizer.html">Fertilizer</a>
+<a href="farming.html">Farming</a>
+<a href="subsidy.html">Subsidy</a>
+<a href="market.html">Market</a>
+<a href="offseason.html">Off-Season</a>
+<a href="chatbot.html">Chatbot</a>
+</div>
+
+<div class="hero">
+<div class="section">
+<h2 style="color:#2e7d32;margin-bottom:20px;">Weather Based Guidance</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Enter Weather Details</h3>
+
+<label>Weather Condition:</label>
+<select id="weatherType">
+<option>Normal</option>
+<option>Heavy Rain</option>
+<option>Drought</option>
+<option>Cyclone</option>
+</select>
+
+<button onclick="weatherAdvice()">Get Advice</button>
+</div>
+
+<div class="box">
+<h3>Recommendation</h3>
+<div id="weatherResult">Output will appear here...</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function weatherAdvice(){
+let type = document.getElementById("weatherType").value;
+let result = "";
+
+if(type==="Heavy Rain"){
+result="Delay sowing. Avoid irrigation. Apply fertilizer after rain stops.";
+}
+else if(type==="Drought"){
+result="Use drip irrigation. Choose drought-resistant seeds.";
+}
+else if(type==="Cyclone"){
+result="Harvest early. Secure stored crops.";
+}
+else{
+result="Follow regular irrigation and fertilizer schedule.";
+}
+
+document.getElementById("weatherResult").innerHTML=result;
+}
+</script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

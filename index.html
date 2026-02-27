@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AGRISMAT - Smart Support for Farmers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-header">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0 40px;">
+        
+        <div>
+            <h1 class="brand">🌾 AGRISMART</h1>
+            <p>Crop Disease Detection System</p>
+        </div>
+
+        <!-- Language Selector -->
+        <div id="google_translate_element"></div>
+
+    </div>
+</div>
+<p>Smart Support for Farmers</p>
+</div>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="disease.html">Disease Detection</a>
+<a href="soil.html">Soil & Crops</a>
+<a href="weather.html">Weather</a>
+<a href="irrigation.html">Irrigation</a>
+<a href="fertilizer.html">Fertilizer</a>
+<a href="farming.html">Farming</a>
+<a href="subsidy.html">Subsidy</a>
+<a href="market.html">Market</a>
+<a href="offseason.html">Off-Season</a>
+<a href="chatbot.html">Chatbot</a>
+</div>
+
+<div class="hero">
+<h2>Helping Farmers Grow Better Crops</h2>
+<p>Upload crop images, check soil types, and get guidance on crop care, water, and growing conditions.</p>
+<button onclick="location.href='disease.html'">Check Crop Health</button>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png">
+<h3>Crop Disease Support</h3>
+<p>Upload leaf photo and get details about diseases and suggested treatments.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png">
+<h3>Soil Type Guidance</h3>
+<p>Find suitable crops based on soil type and climate conditions.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1698/1698370.png">
+<h3>Modern Farming Support</h3>
+<p>Learn greenhouse, irrigation and water control guidance.</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 AGRISMAT - Intelligent Crop & Soil Advisor
+</footer>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
